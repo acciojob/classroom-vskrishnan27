@@ -62,6 +62,8 @@ public class StudentRepository {
         for (Student st : new ArrayList<>(students)) {
             if (set.contains(st.getName())) {
                 TeacherStudent.get(tr).remove(st);
+                students.remove(st);
+                System.out.println("removed");
             }
         }
 
