@@ -77,10 +77,11 @@ public class StudentRepository {
     }
 
     public void deleteAllRecords() {
-        TeacherStudent.clear();
-        students.clear();
-        teachers.clear();
-        return;
+
+        for (Teacher tr : new ArrayList<>(teachers)) {
+            delTeacherAndStudents(tr.getName());
+        }
+
     }
 
 }
